@@ -1,0 +1,1122 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Donia Alnasan - Multimedia Engineering Graduate from Al-Azhar University (GPA 89.88%). Specializing in UX/UI Design, System Analysis, Front-End, and Full-Stack Development.">
+    <meta name="keywords" content="Donia Alnasan, UX/UI Designer, Front-End Developer, Full-Stack Developer, Multimedia Engineer, Al-Azhar University">
+    <meta name="author" content="Donia Alnasan">
+    <title>Donia Alnasan portfolio</title>
+    
+    <!-- Google Fonts: Plus Jakarta Sans & Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+     <link rel="stylesheet" href="style_donia_portfolio.css">
+
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Lucide Icons -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            bg: '#0B0B0F',
+                            card: '#111118',
+                            surface: '#15151D',
+                            border: '#242432',
+                            purple: '#7C3AED',
+                            'purple-light': '#8B5CF6',
+                            blue: '#3B82F6',
+                            text: '#F8FAFC',
+                            muted: '#A1A1AA'
+                        }
+                    },
+                    fontFamily: {
+                        sans: ['Plus Jakarta Sans', 'Inter', 'sans-serif'],
+                        inter: ['Inter', 'sans-serif']
+                    },
+                    boxShadow: {
+                        'glow-purple': '0 0 25px -5px rgba(124, 58, 237, 0.3)',
+                        'glow-blue': '0 0 25px -5px rgba(59, 130, 246, 0.3)'
+                    }
+                }
+            }
+        }
+    </script>
+
+</head>
+<body class="bg-brand-bg text-brand-text font-sans antialiased selection:bg-brand-purple selection:text-white relative overflow-x-hidden">
+
+    <!-- Ambient background illumination -->
+    <div class="ambient-glow bg-brand-purple w-[500px] h-[500px] -top-20 -left-20"></div>
+    <div class="ambient-glow bg-brand-blue w-[600px] h-[600px] top-[40%] -right-20"></div>
+    <div class="ambient-glow bg-brand-purple w-[400px] h-[400px] bottom-10 left-10"></div>
+
+    <header class="fixed top-0 left-0 right-0 z-50 transition-all duration-300 py-4" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <nav class="glass-panel rounded-2xl px-5 py-3.5 flex items-center justify-between">
+                <!-- Personal Brand Logo -->
+                <a href="#home" class="flex items-center gap-2 group">
+                    <span class="w-9 h-9 rounded-full gradient-accent flex items-center justify-center text-white font-bold text-lg shadow-glow-purple group-hover:scale-105 transition-transform">
+                        <img  
+                        src="img_donia/image-initial-1787220612683.png"
+                         alt=""
+                         class="w-10 h-10 object-cover rounded-full"
+                         >
+                    </span>
+                    <span class="font-bold text-xl tracking-tight text-white group-hover:text-brand-purple-light transition-colors">
+                        Donia
+                    </span>
+                </a>
+
+                <!-- Desktop Navigation Links -->
+                <div class="hidden md:flex items-center space-x-1 lg:space-x-2">
+                    <a href="#home" class="nav-link px-3 py-1.5 text-sm font-medium text-brand-muted hover:text-white hover:bg-white/5 rounded-lg transition-all">Home</a>
+                    <a href="#about" class="nav-link px-3 py-1.5 text-sm font-medium text-brand-muted hover:text-white hover:bg-white/5 rounded-lg transition-all">About</a>
+                    <a href="#projects" class="nav-link px-3 py-1.5 text-sm font-medium text-brand-muted hover:text-white hover:bg-white/5 rounded-lg transition-all">Projects</a>
+                    <a href="#skills" class="nav-link px-3 py-1.5 text-sm font-medium text-brand-muted hover:text-white hover:bg-white/5 rounded-lg transition-all">Skills</a>
+                    <a href="#certificates" class="nav-link px-3 py-1.5 text-sm font-medium text-brand-muted hover:text-white hover:bg-white/5 rounded-lg transition-all">Certificates</a>
+                    <a href="#contact" class="nav-link px-3 py-1.5 text-sm font-medium text-brand-muted hover:text-white hover:bg-white/5 rounded-lg transition-all">Contact</a>
+                </div>
+
+                <!-- Desktop Contact CTA -->
+                <div class="hidden md:flex items-center gap-3">
+                    <a href="https://wa.me/972595082324" class="px-4 py-3 text-xs font-semibold rounded-full gradient-accent text-white hover:opacity-95 transition-opacity shadow-glow-purple">
+                        <i class="fab fa-whatsapp brand-purple-light text-[20px]" ></i>
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-brand-muted hover:text-white focus:outline-none" aria-label="Toggle Navigation Menu">
+                    <i data-lucide="menu" id="menu-icon" class="w-6 h-6"></i>
+                </button>
+            </nav>
+
+            <!-- Mobile Navigation Drawer -->
+            <div id="mobile-menu" class="hidden md:hidden mt-2 glass-panel rounded-2xl p-5 border border-white/10 flex-col space-y-3 transition-all">
+                <a href="#home" class="mobile-nav-link text-brand-muted hover:text-white py-2 text-base font-medium border-b border-white/5">Home</a>
+                <a href="#about" class="mobile-nav-link text-brand-muted hover:text-white py-2 text-base font-medium border-b border-white/5">About</a>
+                <a href="#projects" class="mobile-nav-link text-brand-muted hover:text-white py-2 text-base font-medium border-b border-white/5">Projects</a>
+                <a href="#skills" class="mobile-nav-link text-brand-muted hover:text-white py-2 text-base font-medium border-b border-white/5">Skills</a>
+                <a href="#certificates" class="mobile-nav-link text-brand-muted hover:text-white py-2 text-base font-medium border-b border-white/5">Certificates</a>
+                <a href="#contact" class="mobile-nav-link text-brand-muted hover:text-white py-2 text-base font-medium">Contact</a>
+                <a href="#contact" class="w-full mt-2 py-2.5 text-center text-sm font-semibold rounded-xl gradient-accent text-white shadow-glow-purple">
+                    Let's Connect
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <section id="home" class="min-h-screen pt-32 pb-20 flex items-center relative z-10">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+                
+                <!-- Hero Left Column: Personal Introduction -->
+                <div class="lg:col-span-7 space-y-6">
+                    
+                    <!-- Top Badge: Education & GPA -->
+                    <div class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full glass-card border border-brand-purple/30 text-xs font-medium text-brand-purple-light">
+                        <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+                        <span>Multimedia Engineering Graduate</span>
+                        <span class="text-brand-purple-light">•</span>
+                        <span class="text-white font-semibold">Al-Azhar University</span>
+                        <span class="bg-brand-purple/20 px-2 py-0.5 rounded-md text-brand-purple-light border border-brand-purple/30 font-bold ml-1">GPA 89.88%</span>
+                    </div>
+
+                    <!-- Main Name Heading -->
+                    <div class="space-y-2">
+                        <h1 class="text-4xl sm:text-6xl lg:text-6xl font-extrabold tracking-tight">
+                            Hi, I'm <span class="gradient-text">Donia Alnasan</span>
+                        </h1>
+                        <p class="text-lg sm:text-xl font-semibold text-brand-purple-light flex flex-wrap items-center gap-2 pt-1">
+                            <span>UX/UI Designer</span>
+                            <span class="text-brand-blue">•</span>
+                            <span>Front-End Developer</span>
+                            <span class="text-brand-blue">•</span>
+                            <span>Full-Stack Developer</span>
+                        </p>
+                    </div>
+
+                    <!-- Bio Paragraph -->
+                    <p class="text-brand-muted text-base sm:text-lg leading-relaxed max-w-2xl font-normal">
+                       I design and build intuitive, user-centered digital experiences by combining thoughtful system analysis, creative UI/UX design, and clean, responsive front-end development. Focused on modern web technologies and continuously growing toward full-stack development.
+                    </p>
+
+                    <!-- Action CTAs -->
+                    <div class="flex flex-wrap items-center gap-4 pt-2">
+                        <a href="#projects" class="px-6 py-3.5 rounded-xl gradient-accent text-white font-semibold text-sm hover:shadow-glow-purple transition-all flex items-center gap-2 group">
+                            <span>View My Work</span>
+                            <i data-lucide="arrow-right" class="w-4 h-4 group-hover:translate-x-1 transition-transform"></i>
+                        </a>
+                        <a href="https://drive.google.com/file/d/1_0ncxlK__jrgpxF9JL3imC804E8atnf1/view?usp=sharing" class="px-6 py-3.5 rounded-xl glass-card text-white font-semibold text-sm hover:bg-white/10 transition-all border border-white/10 flex items-center gap-2">
+                            <span>My cv</span>
+                            <i data-lucide="briefcase-business" class="w-4 h-4 text-brand-blue"></i>
+                        </a>
+                    </div>
+
+                    <!-- Social Media Links -->
+                    <div class="pt-4 flex items-center gap-4">
+                        <span class="text-xs font-semibold uppercase tracking-wider text-brand-muted">Connect:</span>
+                        <div class="flex items-center gap-3">
+                               <a href="https://www.linkedin.com/in/donia-mohamad-alnasan"  target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-textMuted hover:text-white hover:bg-purplePrimary/20 hover:border-purpleLight/50 transition-all">
+                                    <i class="fa-brands fa-linkedin-in text-base"></i>
+                                </a>
+                                <a href="https://github.com/doniaalnasan" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-textMuted hover:text-white hover:bg-purplePrimary/20 hover:border-purpleLight/50 transition-all">
+                                    <i class="fa-brands fa-github text-base"></i>
+                                </a>
+                                <a href="https://www.behance.net/doniaalnasan" target="_blank" rel="noopener noreferrer" aria-label="Behance Profile" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-textMuted hover:text-white hover:bg-purplePrimary/20 hover:border-purpleLight/50 transition-all">
+                                    <i class="fa-brands fa-behance text-base"></i>
+                                </a>
+                                <a href="https://x.com/DoniaAlnasan" target="_blank" rel="noopener noreferrer" aria-label="X Profile" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-textMuted hover:text-white hover:bg-purplePrimary/20 hover:border-purpleLight/50 transition-all">
+                                    <i class="fa-brands fa-x-twitter text-base"></i>
+                                </a>
+                                <a href="https://www.instagram.com/donia_6mohamad?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-textMuted hover:text-white hover:bg-purplePrimary/20 hover:border-purpleLight/50 transition-all">
+                                    <i class="fa-brands fa-instagram text-base"></i>
+                                </a>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="lg:col-span-5 flex justify-center">
+                    <div class="portrait-wrapper w-full max-w-sm sm:max-w-md relative">
+                        
+                        <!-- Floating Tech Badges -->
+                        <div class="absolute -top-4 -left-4 z-20 glass-panel px-3.5 py-2 rounded-xl border border-brand-purple/30 flex items-center gap-2 shadow-lg animate-bounce" style="animation-duration: 4s;">
+                            <i data-lucide="layout" class="w-4 h-4 text-brand-purple-light"></i>
+                            <span class="text-xs font-semibold text-white">UX/UI & Systems</span>
+                        </div>
+                        
+                        <div class="absolute top-1/2 -right-6 z-20 glass-panel px-3.5 py-2 rounded-xl border border-brand-blue/30 flex items-center gap-2 shadow-lg animate-pulse">
+                            <i data-lucide="code" class="w-4 h-4 text-brand-blue"></i>
+                            <span class="text-xs font-semibold text-white">React & Front-End</span>
+                        </div>
+
+                        <div class="absolute -bottom-4 left-8 z-20 glass-panel px-3.5 py-2 rounded-xl border border-brand-purple/30 flex items-center gap-2 shadow-lg">
+                            <i data-lucide="database" class="w-4 h-4 text-emerald-400"></i>
+                            <span class="text-xs font-semibold text-white">Full-Stack Tech</span>
+                        </div>
+
+                        <!-- Main Interactive Portrait Frame -->
+                        <div id="portrait-card" class="portrait-card rounded-3xl p-3 gradient-border bg-brand-card/80 backdrop-blur-xl shadow-2xl relative group overflow-hidden">
+                            <div class="aspect-[4/5] rounded-2xl overflow-hidden relative bg-brand-surface flex items-center justify-center border border-white/5">
+                                
+                                <!-- Personal Photo Placeholder / Image Element -->
+                                <div class="w-full h-full flex flex-col items-center justify-center p-6 text-center bg-gradient-to-b from-brand-surface to-brand-card relative group-hover:scale-105 transition-transform duration-500">
+                                    
+                                    <!-- <span class="text-xs font-bold uppercase tracking-wider text-brand-purple-light mb-1">Personal Photo</span> -->
+                                    <p class="text-xs text-brand-muted font-mono"><img src="img_donia/صورتي الشخصية .png" alt=""></p>
+                                    <p class="text-[11px] text-brand-muted/70 mt-3 max-w-[200px]">Donia Alnasan — Multimedia Engineering Graduate</p>
+                                </div>
+
+                                <!-- Subtle glow overlay -->
+                                <div class="absolute inset-0 bg-gradient-to-t from-brand-bg/90 via-transparent to-transparent opacity-60"></div>
+                            </div>
+
+                            <!-- Decorative Bottom Strip -->
+                            <div class="p-3 pt-3 flex items-center justify-between text-xs text-brand-muted border-t border-white/5 mt-1">
+                                <span class="flex items-center gap-1.5 text-white font-medium">
+                                    <span class="w-2 h-2 rounded-full bg-brand-purple-light"></span> Donia Alnasan
+                                </span>
+                                <span class="font-mono text-[11px] text-brand-muted">Engineering '24</span>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="py-24 bg-brand-card/50 relative border-y border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                
+                <!-- Left Title Column -->
+                <div class="lg:col-span-4 space-y-4">
+                    <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand-purple-light">
+                        <i data-lucide="user-check" class="w-4 h-4"></i>
+                        <span>Background & Identity</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        My Approach: Engineering, Design, and Technology
+                    </h2>
+                    <div class="w-16 h-1 rounded-full gradient-accent"></div>
+                </div>
+
+                <!-- Right Narrative Column -->
+                <div class="lg:col-span-8 space-y-6 text-brand-muted text-base sm:text-lg leading-relaxed">
+                    <p class="text-white font-medium">
+                        I hold a Bachelor's degree in Multimedia Engineering from Al-Azhar University with a cumulative GPA of <span class="text-brand-purple-light font-bold">89.88%</span>. My academic journey provided me with a robust foundation in software engineering principles, interactive digital technologies, and analytical problem-solving.
+                    </p>
+                    <p>
+                        My professional journey combines Multimedia Engineering, system analysis, UI/UX design, and modern web development. I approach every project as a structured problem-solving process, transforming ideas and requirements into intuitive user experiences and clean, responsive web solutions. With a strong focus on Front-End Development, I continuously expand my skills toward building complete Full-Stack applications.
+
+                    </p>
+
+                    <!-- Key Pillars Grid -->
+                    <div class="grid grid-cols-1 sm:grid-cols-3 gap-4 pt-4">
+                        <div class="glass-card p-4 rounded-2xl border border-white/5">
+                            <div class="w-8 h-8 rounded-lg bg-brand-purple/20 text-brand-purple-light flex items-center justify-center mb-3">
+                                <i data-lucide="git-branch" class="w-4 h-4"></i>
+                            </div>
+                            <h3 class="text-sm font-bold text-white mb-1">System Analysis</h3>
+                            <p class="text-xs text-brand-muted">analyze system requirements, user needs, and workflows to define clear, structured, and effective digital solutions.</p>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl border border-white/5">
+                            <div class="w-8 h-8 rounded-lg bg-brand-blue/20 text-brand-blue flex items-center justify-center mb-3">
+                                <i data-lucide="layout-template" class="w-4 h-4"></i>
+                            </div>
+                            <h3 class="text-sm font-bold text-white mb-1">UX/UI Design</h3>
+                            <p class="text-xs text-brand-muted">design intuitive, user-centered interfaces that combine functionality, clarity, and engaging visual experiences.</p>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl border border-white/5">
+                            <div class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center mb-3">
+                                <i data-lucide="terminal" class="w-4 h-4"></i>
+                            </div>
+                            <h3 class="text-sm font-bold text-white mb-1">Web Development</h3>
+                            <p class="text-xs text-brand-muted">build modern, responsive, and user-focused web experiences using clean and scalable code.</p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="projects" class="py-24 relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <!-- Section Header -->
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-6">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand-purple-light mb-2">
+                        <i data-lucide="folder-git-2" class="w-4 h-4"></i>
+                        <span>Featured Work</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Selected Projects & Case Studies
+                    </h2>
+                </div>
+
+                <!-- Category Filter Buttons -->
+                <div class="flex flex-wrap items-center gap-2 glass-panel p-1.5 rounded-2xl border border-white/10" id="filter-buttons">
+                    <button data-filter="all" class="filter-btn active px-4 py-2 rounded-xl text-xs font-semibold transition-all bg-brand-purple text-white shadow-glow-purple">
+                        All Projects
+                    </button>
+                    <button data-filter="ux-ui" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-white transition-all">
+                        UX/UI & Analysis
+                    </button>
+                    <button data-filter="frontend" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-white transition-all">
+                        Front-End
+                    </button>
+                    <button data-filter="fullstack" class="filter-btn px-4 py-2 rounded-xl text-xs font-semibold text-brand-muted hover:text-white transition-all">
+                        Full Stack
+                    </button>
+                </div>
+            </div>
+
+            <!-- Projects Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="projects-grid">
+                
+                <!-- Project Card 1: UX/UI & Analysis -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col group" data-category="ux-ui" data-project-id="1">
+                    <div class="aspect-video bg-brand-surface relative overflow-hidden flex items-center justify-center p-6 border-b border-white/5">
+                        <div class="text-center">
+                         <i data-lucide="palette" class="w-12 h-12 text-brand-purple-light mx-auto mb-2 opacity-80 group-hover:scale-110 transition-transform"></i>                            
+                         <span class="text-xs text-brand-muted font-mono">TASHKHES</span>
+                        </div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-semibold bg-brand-purple/20 text-brand-purple-light border border-brand-purple/30">
+                            UX/UI & System Analysis
+                        </span>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brand-purple-light transition-colors">
+                                TASHKHES—A medical system for patient diagnosis.
+                            </h3>
+                            <p class="text-sm text-brand-muted mt-2 line-clamp-2">
+                                Comprehensive system analysis and interface design for a modern platform for patient diagnosis, selecting the appropriate doctor, and booking appointments.
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="text-xs text-brand-muted mb-2"><strong class="text-white">My Role:</strong> System Analysis, Wireframing, UX Research, Figma Prototyping</div>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">System Analysis</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">User Flow</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">Figma</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">Wireframes</span>
+                            </div>
+
+                            <button onclick="openModal(1)" class="w-full py-2.5 rounded-xl border border-brand-purple/30 text-brand-purple-light hover:bg-brand-purple hover:text-white font-semibold text-xs transition-all flex items-center justify-center gap-2">
+                                <span>View Case Study</span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 2: Full Stack -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col group" data-category="fullstack" data-project-id="2">
+                    <div class="aspect-video bg-brand-surface relative overflow-hidden flex items-center justify-center p-6 border-b border-white/5">
+                        <div class="text-center">
+                            <i data-lucide="layers" class="w-12 h-12 text-brand-blue mx-auto mb-2 opacity-80 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-brand-muted font-mono">TASHKHES</span>
+                        </div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-semibold bg-brand-blue/20 text-brand-blue border border-brand-blue/30">
+                            Full Stack
+                        </span>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brand-blue transition-colors">
+                              TASHKHES—A medical system for patient diagnosis.
+
+                            </h3>
+                            <p class="text-sm text-brand-muted mt-2 line-clamp-2">
+                                An integrated system for diagnosing cases and distributing patients across various hospitals, managing medical records and appointments; it features a role-based authentication system and real-time data display via an online portal.
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="text-xs text-brand-muted mb-2"><strong class="text-white">My Role:</strong> System Architecture, Front-End React UI, Node.js API & MongoDB</div>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">React</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">Node.js</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">Express</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">MongoDB</span>
+                            </div>
+
+                            <button onclick="openModal(2)" class="w-full py-2.5 rounded-xl border border-brand-blue/30 text-brand-blue hover:bg-brand-blue hover:text-white font-semibold text-xs transition-all flex items-center justify-center gap-2">
+                                <span>View Case Study</span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 3: Front-End -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col group" data-category="frontend" data-project-id="3">
+                    <div class="aspect-video bg-brand-surface relative overflow-hidden flex items-center justify-center p-6 border-b border-white/5">
+                        <div class="text-center">
+                            <i data-lucide="code-2" class="w-12 h-12 text-emerald-400 mx-auto mb-2 opacity-80 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-brand-muted font-mono">MAS</span>
+                        </div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                            Front-End
+                        </span>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                                MAS – A platform for selling Saudi paint products
+                            </h3>
+                            <p class="text-sm text-brand-muted mt-2 line-clamp-2">
+                                MAS is a responsive platform that provides construction and painting services to assist with home design.
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="text-xs text-brand-muted mb-2"><strong class="text-white">My Role:</strong> UI Development, Responsive Layouts, JavaScript State Handling</div>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">JavaScript</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">React</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">Tailwind CSS</span>
+                            </div>
+
+                            <button onclick="openModal(3)" class="w-full py-2.5 rounded-xl border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500 hover:text-white font-semibold text-xs transition-all flex items-center justify-center gap-2">
+                                <span>View Case Study</span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                 <!-- Project Card 4: ux ui -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col group" data-category="ux-ui" data-project-id="1">
+                    <div class="aspect-video bg-brand-surface relative overflow-hidden flex items-center justify-center p-6 border-b border-white/5">
+                        <div class="text-center">
+                         <i data-lucide="palette" class="w-12 h-12 text-brand-purple-light mx-auto mb-2 opacity-80 group-hover:scale-110 transition-transform"></i>                           
+                          <span class="text-xs text-brand-muted font-mono">Palestine-Arabism Educational Center</span>
+                        </div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-semibold bg-brand-purple/20 text-brand-purple-light border border-brand-purple/30">
+                            UX/UI & System Analysis
+                        </span>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brand-purple-light transition-colors">
+                                Palestine of Arabism Center – An Educational Platform
+                            </h3>
+                            <p class="text-sm text-brand-muted mt-2 line-clamp-2">
+                                Palestine Al-Orouba Educational Center is a user-centered e-learning platform designed to provide students with a clear and intuitive way to discover courses based on their educational track, grade, and subject.
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="text-xs text-brand-muted mb-2"><strong class="text-white">My Role:</strong> System Analysis, Wireframing, UX Research, Figma Prototyping</div>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">System Analysis</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">User Flow</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">Figma</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">Wireframes</span>
+                            </div>
+
+                            <button onclick="openModal(4)" class="w-full py-2.5 rounded-xl border border-brand-purple/30 text-brand-purple-light hover:bg-brand-purple hover:text-white font-semibold text-xs transition-all flex items-center justify-center gap-2">
+                                <span>View Case Study</span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!--Project Card 5: Full stack -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col group" data-category="fullstack" data-project-id="2">
+                    <div class="aspect-video bg-brand-surface relative overflow-hidden flex items-center justify-center p-6 border-b border-white/5">
+                        <div class="text-center">
+                            <i data-lucide="layers" class="w-12 h-12 text-brand-blue mx-auto mb-2 opacity-80 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-brand-muted font-mono">Market Makers</span>
+                        </div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-semibold bg-brand-blue/20 text-brand-blue border border-brand-blue/30">
+                            Full Stack
+                        </span>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-brand-blue transition-colors">
+                                Market Makers – Digital Trading Platform
+                            </h3>
+                            <p class="text-sm text-brand-muted mt-2 line-clamp-2">
+                                Market Makers is a full-stack e-learning platform that manages user authentication, course subscriptions, payment verification, and controlled access to educational content.
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="text-xs text-brand-muted mb-2"><strong class="text-white">My Role:</strong> System Architecture, Front-End React UI, Node.js API & MongoDB</div>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">React</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">Node.js</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">Express</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">MongoDB</span>
+                            </div>
+
+                            <button onclick="openModal(5)" class="w-full py-2.5 rounded-xl border border-brand-blue/30 text-brand-blue hover:bg-brand-blue hover:text-white font-semibold text-xs transition-all flex items-center justify-center gap-2">
+                                <span>View Case Study</span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Project Card 6: Front-End -->
+                <div class="project-card glass-card rounded-3xl overflow-hidden border border-white/10 flex flex-col group" data-category="frontend" data-project-id="3">
+                    <div class="aspect-video bg-brand-surface relative overflow-hidden flex items-center justify-center p-6 border-b border-white/5">
+                        <div class="text-center">
+                            <i data-lucide="code-2" class="w-12 h-12 text-emerald-400 mx-auto mb-2 opacity-80 group-hover:scale-110 transition-transform"></i>
+                            <span class="text-xs text-brand-muted font-mono">lila</span>
+                        </div>
+                        <span class="absolute top-4 left-4 px-3 py-1 rounded-full text-[11px] font-semibold bg-emerald-500/20 text-emerald-400 border border-emerald-500/30">
+                            Front-End
+                        </span>
+                    </div>
+                    
+                    <div class="p-6 flex-1 flex flex-col justify-between space-y-4">
+                        <div>
+                            <h3 class="text-xl font-bold text-white group-hover:text-emerald-400 transition-colors">
+                                lilia— Modern User Interface
+                            </h3>
+                            <p class="text-sm text-brand-muted mt-2 line-clamp-2">
+                                High-performance responsive data visualizer with dynamic filtering, dark/light theme options, and fluid CSS animations.
+                            </p>
+                        </div>
+
+                        <div>
+                            <div class="text-xs text-brand-muted mb-2"><strong class="text-white">My Role:</strong> UI Development, Responsive Layouts, JavaScript State Handling</div>
+                            <div class="flex flex-wrap gap-1.5 mb-4">
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">JavaScript</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">React</span>
+                                <span class="px-2.5 py-1 rounded-lg text-[11px] bg-white/5 text-brand-muted">Tailwind CSS</span>
+                            </div>
+
+                            <button onclick="openModal(6)" class="w-full py-2.5 rounded-xl border border-emerald-500/30 text-emerald-400 hover:bg-emerald-500 hover:text-white font-semibold text-xs transition-all flex items-center justify-center gap-2">
+                                <span>View Case Study</span>
+                                <i data-lucide="external-link" class="w-3.5 h-3.5"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <div id="case-study-modal" class="fixed inset-0 z-50 hidden flex items-center justify-center p-4 sm:p-6 lg:p-8 bg-black/80 backdrop-blur-md transition-opacity">
+        <div class="glass-panel max-w-4xl w-full max-h-[90vh] rounded-3xl border border-white/10 overflow-hidden flex flex-col shadow-2xl relative animate-in fade-in zoom-in-95 duration-200">
+            
+            <!-- Modal Header -->
+            <div class="p-6 border-b border-white/10 flex items-center justify-between bg-brand-surface/80">
+                <div class="flex items-center gap-3">
+                    <span id="modal-category-badge" class="px-3 py-1 rounded-full text-xs font-semibold bg-brand-purple/20 text-brand-purple-light border border-brand-purple/30">
+                        Category
+                    </span>
+                    <h3 id="modal-title" class="text-xl sm:text-2xl font-bold text-white">Project Case Study</h3>
+                </div>
+                <button onclick="closeModal()" class="p-2 text-brand-muted hover:text-white hover:bg-white/10 rounded-xl transition-all" aria-label="Close Case Study">
+                    <i data-lucide="x" class="w-6 h-6"></i>
+                </button>
+            </div>
+
+            <!-- Modal Body (Scrollable Case Study Structure) -->
+            <div class="p-6 sm:p-8 overflow-y-auto space-y-8" id="modal-content">
+                <!-- Case study content dynamically injected via JS -->
+            </div>
+
+            <!-- Modal Footer -->
+            <div class="p-5 border-t border-white/10 bg-brand-surface/80 flex flex-wrap items-center justify-between gap-4">
+                <div id="modal-links-container" class="flex items-center gap-3">
+                    <!-- Dynamic live / github links -->
+                </div>
+                <button onclick="closeModal()" class="px-5 py-2 rounded-xl glass-card text-xs font-semibold text-white hover:bg-white/10 transition-all">
+                    Close Case Study
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <section id="skills" class="py-24 bg-brand-card/30 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="text-center max-w-2xl mx-auto mb-16 space-y-3">
+                <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand-purple-light">
+                    <i data-lucide="cpu" class="w-4 h-4"></i>
+                    <span>Technical Capabilities</span>
+                </div>
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                    Tools, Frameworks & Methodologies
+                </h2>
+                <p class="text-brand-muted text-sm sm:text-base">
+                    Organized by domain expertise, continuously expanding through practical projects and ongoing engineering learning.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                
+                <!-- Category 1: UX/UI & System Analysis -->
+                <div class="glass-card p-6 rounded-3xl border border-white/5 space-y-4">
+                    <div class="flex items-center gap-3 border-b border-white/5 pb-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand-purple/20 text-brand-purple-light flex items-center justify-center">
+                            <i data-lucide="figma" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white">UX/UI & Analysis</h3>
+                            <span class="text-[11px] text-brand-muted">Design & Architecture</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-brand-muted">
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">Requirements Analysis</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-brand-purple/10 text-brand-purple-light">Core</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">UX Research & User Flow</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-brand-purple/10 text-brand-purple-light">Core</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">Wireframing & Prototyping</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-brand-purple/10 text-brand-purple-light">Practical</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">Figma</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-brand-purple/10 text-brand-purple-light">Tool</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1">
+                            <span class="text-white font-medium">Canva</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-brand-purple/10 text-brand-purple-light">Tool</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 2: Front-End Development -->
+                <div class="glass-card p-6 rounded-3xl border border-white/5 space-y-4">
+                    <div class="flex items-center gap-3 border-b border-white/5 pb-4">
+                        <div class="w-10 h-10 rounded-xl bg-brand-blue/20 text-brand-blue flex items-center justify-center">
+                            <i data-lucide="code" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white">Front-End</h3>
+                            <span class="text-[11px] text-brand-muted">Web Engineering</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-brand-muted">
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">HTML5 & CSS3</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-brand-blue/10 text-brand-blue">Core</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">JavaScript (ES6+)</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-brand-blue/10 text-brand-blue">Core</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">React.js</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-brand-blue/10 text-brand-blue">Framework</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">Bootstrap & Tailwind</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-brand-blue/10 text-brand-blue">Styling</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1">
+                            <span class="text-white font-medium">Responsive Design</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-brand-blue/10 text-brand-blue">Method</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 3: Back-End Development -->
+                <div class="glass-card p-6 rounded-3xl border border-white/5 space-y-4">
+                    <div class="flex items-center gap-3 border-b border-white/5 pb-4">
+                        <div class="w-10 h-10 rounded-xl bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                            <i data-lucide="server" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white">Back-End</h3>
+                            <span class="text-[11px] text-brand-muted">Server & APIs</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-brand-muted">
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">Node.js</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400">Runtime</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">Express.js</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400">Framework</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">RESTful APIs</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400">Architecture</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1">
+                            <span class="text-white font-medium">JWT Authentication</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-emerald-500/10 text-emerald-400">Security</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Category 4: Database & Developer Tools -->
+                <div class="glass-card p-6 rounded-3xl border border-white/5 space-y-4">
+                    <div class="flex items-center gap-3 border-b border-white/5 pb-4">
+                        <div class="w-10 h-10 rounded-xl bg-amber-500/20 text-amber-400 flex items-center justify-center">
+                            <i data-lucide="wrench" class="w-5 h-5"></i>
+                        </div>
+                        <div>
+                            <h3 class="text-base font-bold text-white">Database & Tools</h3>
+                            <span class="text-[11px] text-brand-muted">Infrastructure</span>
+                        </div>
+                    </div>
+                    <ul class="space-y-2.5 text-xs text-brand-muted">
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">MongoDB</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">NoSQL</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">PostgreSQL</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">SQL</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1 border-b border-white/5">
+                            <span class="text-white font-medium">Git & GitHub</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">Version Control</span>
+                        </li>
+                        <li class="flex items-center justify-between py-1">
+                            <span class="text-white font-medium">VS Code</span>
+                            <span class="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-400">Environment</span>
+                        </li>
+                    </ul>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <section id="certificates" class="py-24 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand-purple-light mb-2">
+                        <i data-lucide="award" class="w-4 h-4"></i>
+                        <span>Professional Growth</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Certificates & Specializations
+                    </h2>
+                </div>
+                <p class="text-xs text-brand-muted max-w-xs">
+                    Continuous learning and skill verification across engineering and software development.
+                </p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                
+                <!-- Certificate Card 1 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/5 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-brand-purple/20 text-brand-purple-light flex items-center justify-center">
+                                <i data-lucide="award" class="w-4 h-4"></i>
+                            </span>
+                            <span class="text-xs text-brand-muted font-mono">16-19,2024</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1">Website Design and Development</h3>
+                        <p class="text-xs text-brand-muted">Al-Kitab University - Iraq</p>
+                    </div>
+
+                    <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-[11px] text-brand-muted">Verified Credential</span>
+                        <a href="https://drive.google.com/file/d/14jtdvSVzltMwg0mtqCUPIOzNYhdeRdm5/view?usp=sharing" class="text-xs font-medium text-brand-purple-light hover:underline flex items-center gap-1">
+                            <span>Verification Link</span>
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 2 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/5 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-brand-blue/20 text-brand-blue flex items-center justify-center">
+                                <i data-lucide="layout" class="w-4 h-4"></i>
+                            </span>
+                            <span class="text-xs text-brand-muted font-mono">21/8/2026</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1">Creating professional LinkedIn pages</h3>
+                        <p class="text-xs text-brand-muted">Coursera platform</p>
+                    </div>
+
+                    <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-[11px] text-brand-muted">Verified Credential</span>
+                        <a href="https://drive.google.com/file/d/1Xcd3B_oYNeGWM4x9x9E1Tu-Aec6cuh5o/view?usp=sharing" class="text-xs font-medium text-brand-blue hover:underline flex items-center gap-1">
+                            <span>Verification Link</span>
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 3 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/5 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center">
+                                <i data-lucide="graduation-cap" class="w-4 h-4"></i>
+                            </span>
+                            <span class="text-xs text-brand-muted font-mono">2026</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1">B.Sc. Multimedia Engineering</h3>
+                        <p class="text-xs text-brand-muted">Al-Azhar University (GPA 89.88%)</p>
+                    </div>
+
+                    <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-[11px] text-brand-muted">Academic Degree</span>
+                        <span class="text-xs text-emerald-400 font-semibold">Honors</span>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 4 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/5 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-brand-purple/20 text-brand-purple-light flex items-center justify-center">
+                                <i data-lucide="award" class="w-4 h-4"></i>
+                            </span>
+                            <span class="text-xs text-brand-muted font-mono">16-19,2024</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1">Diploma – English Language</h3>
+                        <p class="text-xs text-brand-muted">Success International Center</p>
+                    </div>
+
+                    <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-[11px] text-brand-muted">Verified Credential</span>
+                        <a href="https://drive.google.com/file/d/1WH8jn55xXxIBG1e9_c3H8ATSNwCB9W-I/view?usp=sharing" class="text-xs font-medium text-brand-purple-light hover:underline flex items-center gap-1">
+                            <span>Verification Link</span>
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Certificate Card 5 -->
+                <div class="glass-card p-6 rounded-3xl border border-white/5 flex flex-col justify-between space-y-4">
+                    <div>
+                        <div class="flex items-center justify-between mb-3">
+                            <span class="w-8 h-8 rounded-lg bg-brand-blue/20 text-brand-blue flex items-center justify-center">
+                                <i data-lucide="layout" class="w-4 h-4"></i>
+                            </span>
+                            <span class="text-xs text-brand-muted font-mono">18/8/2026</span>
+                        </div>
+                        <h3 class="text-base font-bold text-white mb-1">Canva for designing and creating digital products.</h3>
+                        <p class="text-xs text-brand-muted">Coursera platform</p>
+                    </div>
+
+                    <div class="pt-3 border-t border-white/5 flex items-center justify-between">
+                        <span class="text-[11px] text-brand-muted">Verified Credential</span>
+                        <a href="https://drive.google.com/file/d/1OL3qXoxeS1sZ-J2fPpqdT57lN6I5jnaO/view?usp=sharing" class="text-xs font-medium text-brand-blue hover:underline flex items-center gap-1">
+                            <span>Verification Link</span>
+                            <i data-lucide="arrow-up-right" class="w-3 h-3"></i>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <section id="contact" class="py-24 bg-brand-card/30 relative border-t border-white/5">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                
+                <!-- Left Column: Contact Intro & Direct Channels -->
+                <div class="lg:col-span-5 space-y-6">
+                    <div class="inline-flex items-center gap-2 text-xs font-bold tracking-widest uppercase text-brand-purple-light">
+                        <i data-lucide="send" class="w-4 h-4"></i>
+                        <span>Get In Touch</span>
+                    </div>
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                        Have a project or an idea? Let's build it together.
+                    </h2>
+                    <p class="text-brand-muted text-base">
+                        I am currently open to full-time opportunities, freelance collaborations, and software engineering projects. Feel free to send a message or connect via email.
+                    </p>
+
+                    <div class="space-y-4 pt-4">
+                        <div class="glass-card p-4 rounded-2xl border border-white/5 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-purple/20 text-brand-purple-light flex items-center justify-center shrink-0">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-brand-muted block">My Email</span>
+                                <a href="mailto:email@example.com" class="text-sm font-semibold text-white hover:text-brand-purple-light transition-colors font-mono">
+                                     doniamohamad51@gmail.com
+                                </a>
+                            </div>
+                        </div>
+
+                        <div class="glass-card p-4 rounded-2xl border border-white/5 flex items-center gap-4">
+                            <div class="w-10 h-10 rounded-xl bg-brand-blue/20 text-brand-blue flex items-center justify-center shrink-0">
+                                <i data-lucide="map-pin" class="w-5 h-5"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-brand-muted block">Palestine - Gaza / University</span>
+                                <a  href="https://www.bing.com/maps/search?v=2&pc=FACEBK&mid=8100&mkt=en-US&fbclid=IwY2xjawUQyIZwZG9mBWV4dG4DYWVtAjEwAGJyaWQRMVhlaUhpbWZ1bWJGTmwxdGFzcnRjBmFwcF9pZBAyMjIwMzkxNzg4MjAwODkyAAEeIMGojuGvJMaOJVzUlGKLX8a0TtRmqm90WD5atDOoiIxelkn0ZmKFaPY2iMI_aem_lw_XnVi1G09asNzYxnNbdA&FORM=FBKPL1&q=Jamal+Abdl+Naser+St%2C+Gaza%2C+Palestine&cp=31.516064%7E34.436643&lvl=17.8&style=r" class="text-sm font-semibold text-white">Al-Azhar University Graduate</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Social Icons Row -->
+                    <div class="pt-2">
+                        <span class="text-xs font-semibold text-brand-muted block mb-3 uppercase tracking-wider">Professional Profiles</span>
+                        <div class="flex items-center gap-3">
+                            <a href="https://www.linkedin.com/in/donia-mohamad-alnasan" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn Profile" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-textMuted hover:text-white hover:bg-purplePrimary/20 hover:border-purpleLight/50 transition-all">
+                                    <i class="fa-brands fa-linkedin-in text-base"></i>
+                                </a>
+                                <a href="https://github.com/doniaalnasan" target="_blank" rel="noopener noreferrer" aria-label="GitHub Profile" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-textMuted hover:text-white hover:bg-purplePrimary/20 hover:border-purpleLight/50 transition-all">
+                                    <i class="fa-brands fa-github text-base"></i>
+                                </a>
+                                <a href="https://www.behance.net/doniaalnasan" target="_blank" rel="noopener noreferrer" aria-label="Behance Profile" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-textMuted hover:text-white hover:bg-purplePrimary/20 hover:border-purpleLight/50 transition-all">
+                                    <i class="fa-brands fa-behance text-base"></i>
+                                </a>
+                                <a href="https://x.com/DoniaAlnasan" target="_blank" rel="noopener noreferrer" aria-label="X Profile" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-textMuted hover:text-white hover:bg-purplePrimary/20 hover:border-purpleLight/50 transition-all">
+                                    <i class="fa-brands fa-x-twitter text-base"></i>
+                                </a>
+                                <a href="https://www.instagram.com/donia_6mohamad?utm_source=ig_web_button_share_sheet&stkn=ZDNlZDc0MzIxNw==" target="_blank" rel="noopener noreferrer" aria-label="Instagram Profile" class="w-10 h-10 rounded-lg glass-card flex items-center justify-center text-textMuted hover:text-white hover:bg-purplePrimary/20 hover:border-purpleLight/50 transition-all">
+                                    <i class="fa-brands fa-instagram text-base"></i>
+                                </a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Right Column: Interactive Form -->
+                <div class="lg:col-span-7 glass-card p-8 rounded-3xl border border-white/10 space-y-5">
+                    <!-- Header -->
+    <div class="flex items-center justify-between mb-6">
+        <div>
+            <span class="text-sm text-brand-purple-light font-semibold uppercase tracking-wider">
+                Training Experience
+            </span>
+
+            <h3 class="text-2xl font-bold text-white mt-1">
+                Learning Through <span class="text-brand-purple-light">Real Experience</span>
+            </h3>
+        </div>
+
+        <div class="w-12 h-12 rounded-xl bg-brand-purple-light/10 
+                    flex items-center justify-center
+                    hover:scale-110 transition-transform duration-300">
+            <i data-lucide="graduation-cap"
+               class="w-6 h-6 text-brand-purple-light"></i>
+        </div>
+    </div>
+
+
+    <!-- Webura -->
+    <div class="group flex gap-4 p-4 rounded-2xl border border-white/5
+                hover:border-brand-purple-light/30 hover:bg-white/5
+                transition-all duration-300 cursor-pointer">
+
+        <div class="w-11 h-11 shrink-0 rounded-xl bg-brand-blue/10
+                    flex items-center justify-center
+                    group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="code-2"
+               class="w-5 h-5 text-brand-blue"></i>
+        </div>
+
+        <div class="flex-1">
+            <div class="flex items-center justify-between gap-3">
+                <h4 class="font-bold text-white">Webura</h4>
+
+                <i data-lucide="arrow-up-right"
+                   class="w-4 h-4 text-gray-500
+                          group-hover:text-brand-purple-light
+                          group-hover:translate-x-1
+                          group-hover:-translate-y-1
+                          transition-all"></i>
+            </div>
+
+            <p class="text-sm text-gray-400 mt-1 leading-6">
+                Front-End Development training focused on building
+                modern and responsive web interfaces.
+            </p>
+
+            <span class="inline-block mt-2 text-xs text-brand-blue">
+                Front-End Development
+            </span>
+        </div>
+    </div>
+
+
+    <!-- Avatar -->
+    <div class="group flex gap-4 p-4 rounded-2xl border border-white/5
+                hover:border-brand-purple-light/30 hover:bg-white/5
+                transition-all duration-300 cursor-pointer">
+
+        <div class="w-11 h-11 shrink-0 rounded-xl bg-brand-purple-light/10
+                    flex items-center justify-center
+                    group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="layers-3"
+               class="w-5 h-5 text-brand-purple-light"></i>
+        </div>
+
+        <div class="flex-1">
+            <div class="flex items-center justify-between gap-3">
+                <h4 class="font-bold text-white">Avatar</h4>
+
+                <i data-lucide="arrow-up-right"
+                   class="w-4 h-4 text-gray-500
+                          group-hover:text-brand-purple-light
+                          group-hover:translate-x-1
+                          group-hover:-translate-y-1
+                          transition-all"></i>
+            </div>
+
+            <p class="text-sm text-gray-400 mt-1 leading-6">
+                Training focused on building digital products from
+                UX/UI design and system analysis to development and deployment.
+            </p>
+
+            <span class="inline-block mt-2 text-xs text-brand-purple-light">
+                UX/UI → Development → Deployment
+            </span>
+        </div>
+    </div>
+
+
+    <!-- Aristo -->
+    <div class="group flex gap-4 p-4 rounded-2xl border border-white/5
+                hover:border-brand-purple-light/30 hover:bg-white/5
+                transition-all duration-300 cursor-pointer">
+
+        <div class="w-11 h-11 shrink-0 rounded-xl bg-brand-blue/10
+                    flex items-center justify-center
+                    group-hover:scale-110 transition-transform duration-300">
+            <i data-lucide="rocket"
+               class="w-5 h-5 text-brand-blue"></i>
+        </div>
+
+        <div class="flex-1">
+            <div class="flex items-center justify-between gap-3">
+                <h4 class="font-bold text-white">Aristo</h4>
+
+                <i data-lucide="arrow-up-right"
+                   class="w-4 h-4 text-gray-500
+                          group-hover:text-brand-purple-light
+                          group-hover:translate-x-1
+                          group-hover:-translate-y-1
+                          transition-all"></i>
+            </div>
+
+            <p class="text-sm text-gray-400 mt-1 leading-6">
+                Practical training focused on working on real-world
+                projects using Front-End development and React.
+            </p>
+
+            <span class="inline-block mt-2 text-xs text-brand-blue">
+                Front-End · React
+            </span>
+        </div>
+    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <footer class="py-12 border-t border-white/5 bg-brand-bg relative">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col md:flex-row items-center justify-between gap-6">
+            
+            <div class="flex items-center gap-3">
+                <a href="#home" class="flex items-center gap-2 group">
+                    <span class="w-9 h-9 rounded-full gradient-accent flex items-center justify-center text-white font-bold text-lg shadow-glow-purple group-hover:scale-105 transition-transform">
+                        <img  
+                        src="img_donia/image-initial-1787220612683.png"
+                         alt=""
+                         class="w-10 h-10 object-cover rounded-full"
+                         >
+                    </span>
+                <div>
+                    <span class="text-sm font-bold text-white">Donia Alnasan</span>
+                    <p class="text-xs text-brand-muted">Multimedia Engineering Graduate • Al-Azhar University</p>
+                </div>
+            </div>
+
+            <p class="text-xs text-brand-muted text-center">
+                © <span id="copyright-year">2026</span> Donia Alnasan. All rights reserved. Designed & Engineered with precision.
+            </p>
+
+            <div class="flex items-center gap-4">
+                <a href="#home" class="p-2 rounded-lg glass-card text-brand-muted hover:text-white transition-colors" aria-label="Back to top">
+                    <i data-lucide="arrow-up" class="w-4 h-4"></i>
+                </a>
+            </div>
+
+        </div>
+    </footer>
+
+    <script src="main_donia_portfolio.js"></script>
+</body>
+</html>
