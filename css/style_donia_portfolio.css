@@ -83,7 +83,335 @@
             pointer-events: none;
         }
 
+        /* Hero: social icon hover (brand accent) */
+        .hero-social:hover {
+            background: rgba(124, 58, 237, 0.2);
+            border-color: rgba(139, 92, 246, 0.5);
+        }
+
+        /* Hero: subtle floating badges */
+        @keyframes hero-float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-6px); }
+        }
+
+        .hero-badge--float {
+            animation: hero-float 5s ease-in-out infinite;
+        }
+
+        .hero-badge--float-delayed {
+            animation: hero-float 5s ease-in-out 1.5s infinite;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            .hero-badge--float,
+            .hero-badge--float-delayed {
+                animation: none;
+            }
+        }
+
+        /* Projects: shared thumbnail backdrop (tinted glow + subtle dot grid) */
+        .project-thumb {
+            background-color: #15151D;
+            background-image:
+                radial-gradient(circle at 30% 20%, var(--thumb-tint, rgba(124, 58, 237, 0.18)), transparent 60%),
+                radial-gradient(rgba(255, 255, 255, 0.05) 1px, transparent 1px);
+            background-size: auto, 18px 18px;
+        }
+
+        .project-thumb--blue {
+            --thumb-tint: rgba(59, 130, 246, 0.18);
+        }
+
+        .project-thumb--emerald {
+            --thumb-tint: rgba(16, 185, 129, 0.16);
+        }
+
+        /* Optional cover image: fills the thumbnail without distortion */
+        .project-thumb-img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .group:hover .project-thumb-img {
+            transform: scale(1.03);
+        }
+
+        /* Hide the icon placeholder once a cover image is added */
+        .project-thumb-img + .project-thumb-placeholder {
+            display: none;
+        }
+
         /* Modal backdrop */
         .modal-active {
             overflow: hidden;
+        }
+
+
+        /* =================================================================
+           Motion System: Entrance & Scroll Reveal
+           -----------------------------------------------------------------
+           States are classes on <html>, set by the inline script in <head>
+           and by "Entrance & Scroll Reveal" in js/main_donia_portfolio.js:
+             .intro / .intro-short  -> elements wait in their start state
+             .intro-play            -> the entrance sequence runs
+             .intro-landed          -> the monogram has reached the navbar
+             .reveal                -> scroll reveal is active
+           Only opacity, transform and filter are animated (no layout work),
+           and every end state equals the normal resting state.
+           ================================================================= */
+        :root {
+            --ease-out-expo: cubic-bezier(0.16, 1, 0.3, 1);
+            --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+        }
+
+        /* Hero ambient background: soft light (design) + faint grid (structure) */
+        .hero-ambient {
+            position: absolute;
+            inset: 0;
+            overflow: hidden;
+            pointer-events: none;
+            z-index: -1;
+        }
+
+        .hero-ambient .ambient-glow {
+            width: 42rem;
+            height: 42rem;
+            animation: ambient-drift 24s ease-in-out infinite alternate;
+        }
+
+        .ambient-glow--purple {
+            background: #7C3AED;
+            top: -14rem;
+            left: -12rem;
+        }
+
+        .hero-ambient .ambient-glow--blue {
+            background: #3B82F6;
+            bottom: -18rem;
+            right: -14rem;
+            opacity: 0.1;
+            animation-delay: -12s;
+        }
+
+        .hero-grid {
+            position: absolute;
+            inset: 0;
+            background-image:
+                linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+            background-size: 56px 56px;
+            -webkit-mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 25%, transparent 75%);
+            mask-image: radial-gradient(ellipse 70% 60% at 50% 45%, #000 25%, transparent 75%);
+        }
+
+        @keyframes ambient-drift {
+            from { transform: translate3d(0, 0, 0) scale(1); }
+            to { transform: translate3d(5rem, 3rem, 0) scale(1.12); }
+        }
+
+        @media (max-width: 640px) {
+            .hero-ambient .ambient-glow {
+                width: 24rem;
+                height: 24rem;
+            }
+        }
+
+        /* ---------- Entrance: monogram overlay ---------- */
+        #intro-mark {
+            display: none;
+        }
+
+        html.intro #intro-mark {
+            display: block;
+            position: fixed;
+            left: 50%;
+            top: 50%;
+            width: 84px;
+            height: 84px;
+            margin: -42px 0 0 -42px;
+            z-index: 80;
+            pointer-events: none;
+            will-change: transform;
+        }
+
+        .intro-mark-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+
+        .intro-mark-inner img {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            border-radius: 9999px;
+            object-fit: cover;
+        }
+
+        .intro-mark-glow {
+            position: absolute;
+            inset: -70%;
+            border-radius: 9999px;
+            background: radial-gradient(circle, rgba(124, 58, 237, 0.4) 0%, rgba(59, 130, 246, 0.12) 40%, transparent 68%);
+        }
+
+        .intro-mark-ring {
+            position: absolute;
+            inset: -5px;
+            border-radius: 9999px;
+            border: 1px solid rgba(139, 92, 246, 0.55);
+        }
+
+        /* Plays from the very first paint, before any script runs */
+        html.intro .intro-mark-inner {
+            animation: intro-mark-in 0.5s var(--ease-out-expo) both;
+        }
+
+        html.intro .intro-mark-glow {
+            animation: intro-glow 0.9s var(--ease-out-expo) both;
+        }
+
+        /* The navbar logo stays hidden until the monogram lands on it */
+        html.intro:not(.intro-landed) #brand-mark {
+            opacity: 0;
+        }
+
+        /* ---------- Entrance: hero content & navigation ---------- */
+        html.intro [data-intro],
+        html.intro-short [data-intro],
+        html.intro .hero-ambient {
+            opacity: 0;
+        }
+
+        [data-intro="1"] { --intro-i: 0; }
+        [data-intro="2"] { --intro-i: 1; }
+        [data-intro="3"] { --intro-i: 2; }
+        [data-intro="4"] { --intro-i: 3; }
+        [data-intro="5"] { --intro-i: 4; }
+        [data-intro="6"] { --intro-i: 5; }
+        [data-intro="7"] { --intro-i: 6; }
+        [data-intro="portrait"] { --intro-i: 1.5; }
+        [data-intro="nav"] { --intro-i: -2; }
+
+        html.intro-play [data-intro] {
+            animation: intro-rise 0.75s var(--ease-out-expo) both;
+            animation-delay: calc(380ms + var(--intro-i) * 70ms);
+        }
+
+        html.intro-play [data-intro="portrait"] {
+            animation-name: intro-portrait;
+            animation-duration: 0.9s;
+        }
+
+        /* The navbar only fades (no movement), so the monogram docks into a
+           logo that is already in its final position */
+        html.intro-play [data-intro="nav"] {
+            animation-name: intro-fade;
+            animation-duration: 0.5s;
+        }
+
+        html.intro-play .hero-ambient {
+            animation: intro-fade 1.2s var(--ease-out-expo) both;
+        }
+
+        html.intro-play .hero-grid {
+            animation: intro-grid 1.4s var(--ease-out-expo) 0.15s both;
+        }
+
+        /* Returning visit in the same session: a quicker version, no monogram */
+        html.intro-short.intro-play [data-intro] {
+            animation-duration: 0.5s;
+            animation-delay: calc(max(var(--intro-i), 0) * 35ms);
+        }
+
+        @keyframes intro-mark-in {
+            from { opacity: 0; transform: scale(0.82) rotate(-8deg); filter: blur(8px); }
+            to { opacity: 1; transform: none; filter: none; }
+        }
+
+        @keyframes intro-glow {
+            from { opacity: 0; transform: scale(0.6); }
+            to { opacity: 1; transform: none; }
+        }
+
+        @keyframes intro-rise {
+            from { opacity: 0; transform: translate3d(0, 18px, 0); filter: blur(8px); }
+            to { opacity: 1; transform: none; filter: none; }
+        }
+
+        @keyframes intro-portrait {
+            from { opacity: 0; transform: translate3d(0, 14px, 0) scale(0.96); filter: blur(10px); }
+            to { opacity: 1; transform: none; filter: none; }
+        }
+
+        @keyframes intro-fade {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes intro-grid {
+            from { opacity: 0; transform: scale(1.06); }
+            to { opacity: 1; transform: none; }
+        }
+
+        /* ---------- Scroll reveal ----------
+           [data-reveal]          -> the element reveals as one group
+           [data-reveal-stagger]  -> its direct children reveal one after another
+           .is-revealed is added when visible; .reveal-done afterwards hands
+           control back to the element's own transitions (e.g. card hover). */
+        html.reveal [data-reveal]:not(.reveal-done),
+        html.reveal [data-reveal-stagger] > :not(.reveal-done) {
+            transition:
+                opacity 0.8s var(--ease-out-expo),
+                transform 0.8s var(--ease-out-expo),
+                filter 0.8s var(--ease-out-expo);
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+
+        html.reveal [data-reveal]:not(.is-revealed) {
+            opacity: 0;
+            transform: translate3d(0, 24px, 0) scale(0.98);
+            filter: blur(6px);
+        }
+
+        html.reveal [data-reveal-stagger] > :not(.is-revealed) {
+            opacity: 0;
+            transform: translate3d(0, 28px, 0) scale(0.98);
+        }
+
+        /* Project cards: the visual settles first, then the text follows */
+        html.reveal #projects-grid > .project-card:not(.reveal-done) :is(.project-thumb-placeholder, .project-thumb-img) {
+            transition: opacity 0.8s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+            transition-delay: var(--reveal-delay, 0ms);
+        }
+
+        html.reveal #projects-grid > .project-card:not(.reveal-done) > div {
+            transition: opacity 0.8s var(--ease-out-expo), transform 1s var(--ease-out-expo);
+            transition-delay: calc(var(--reveal-delay, 0ms) + 120ms);
+        }
+
+        html.reveal #projects-grid > .project-card:not(.is-revealed) :is(.project-thumb-placeholder, .project-thumb-img) {
+            transform: scale(0.97);
+        }
+
+        html.reveal #projects-grid > .project-card:not(.is-revealed) > div {
+            opacity: 0;
+            transform: translate3d(0, 8px, 0);
+        }
+
+        /* ---------- Reduced motion: no entrance, no reveal, no ambient drift ---------- */
+        @media (prefers-reduced-motion: reduce) {
+            html {
+                scroll-behavior: auto !important;
+            }
+
+            .hero-ambient .ambient-glow,
+            .animate-pulse {
+                animation: none !important;
+            }
         }
