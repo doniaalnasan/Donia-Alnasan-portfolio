@@ -418,7 +418,7 @@
                 challenges: [],
                 tech: { design: [], frontend: [], backend: [], tools: [] },
                 screenshots: [],
-                links: { live: "", github: "", figma: "" }
+                links: { live: "https://doniaalnasan.github.io/mas/", github: "https://github.com/doniaalnasan/mas", figma: "" }
             },
 
             'lilia': {
@@ -451,7 +451,7 @@
                 challenges: [],
                 tech: { design: [], frontend: ["HTML", "CSS"], backend: [], tools: [] },
                 screenshots: [],
-                links: { live: "", github: "https://github.com/doniaalnasan/lilia", figma: "" }
+                links: { live: "https://doniaalnasan.github.io/lilia/", github: "https://github.com/doniaalnasan/lilia", figma: "" }
             }
         };
 
